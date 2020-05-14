@@ -199,9 +199,9 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     shellany (0.0.1)
-    simple_form (3.5.1)
-      actionpack (> 4, < 5.2)
-      activemodel (> 4, < 5.2)
+    simple_form (5.0.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -261,7 +261,7 @@ DEPENDENCIES
   rails (~> 5.1.4)
   sass-rails (~> 5.0)
   selenium-webdriver
-  simple_form (~> 3.5)
+  simple_form (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
