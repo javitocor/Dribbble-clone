@@ -2,11 +2,11 @@ class ShotsController < ApplicationController
   before_action :set_shot, only: [:show, :edit, :update, :destroy, :like, :unlike]
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :like, :unlike]
   impressionist actions: [:show], unique: [:impressionable_type, :impressionable_id, :session_hash]
-  
+
   # GET /shots
   # GET /shots.json
   def index
-    @shots = Shot.all.order(create_at: :desc)
+    @shots = Shot.all.order('created_at DESC')
   end
 
   # GET /shots/1
@@ -85,8 +85,8 @@ class ShotsController < ApplicationController
       @shot = Shot.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Never trust parameters from the scary internet, only allow the white list through.
     def shot_params
-      params.require(:shot).permit(:title, :description, :user_id, :user_shot)
+      params.require(:shot).permit(:title, :description, :user_shot)
     end
 end
